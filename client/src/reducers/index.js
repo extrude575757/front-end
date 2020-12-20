@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
 import { titleReducer } from "./titleReducer";
-import { membersReducer } from "./membersReducer";
+import { recipesReducer } from "./recipesReducer";
 
-export default combineReducers({ titleState: titleReducer, membersReducer });
+export default combineReducers({ titleState: titleReducer, recipesReducer });

@@ -1,40 +1,40 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import { addNewMember } from "../actions/membersActions";
+import { addNewRecipe } from "../actions/recipeActions";
 
 class List extends React.Component {
   state = {
-    newMember: ""
+    newRecipe: ""
   };
 
   handleChanges = (e) => {
-    this.setState({ newMember: e.target.value });
+    this.setState({ newRecipe: e.target.value });
   };
 
   render() {
     return (
       <React.Fragment>
         <div className="friends-list">
-          {this.props.members.map((member, index) => (
+          {this.props.recipes.map((recipe, index) => (
             <h4 key={index}>
-              {member.name}
-              {member.status && <i className="fas fa-dragon" />}
+              {recipe.name}
+              {recipe.recStatus && <i className="fas fa-dragon" />}
             </h4>
           ))}
         </div>
         <input
           type="text"
-          value={this.state.newMember}
+          value={this.state.newRecipe}
           onChange={this.handleChanges}
-          placeholder="Add new member"
+          placeholder="Add new Recipe"
         />
         <button
           onClick={() => {
-            this.props.addNewMember(this.state.newMember);
+            this.props.addNewRecipe(this.state.newRecipe);
           }}
         >
-          Add member
+          Add recipe
         </button>
       </React.Fragment>
     );
@@ -42,8 +42,8 @@ class List extends React.Component {
 }
 const mapStateToProps = (state) => {
   return {
-    members: state.membersReducer.members
+    recipes: state.recipesReducer.recipes
   };
 };
 
-export default connect(mapStateToProps, { addNewMember })(List);
+export default connect(mapStateToProps, { addNewRecipe })(List);
