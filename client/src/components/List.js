@@ -18,15 +18,30 @@ class List extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <div className="friends-list">
+
+<div className="friends-list">
           {this.props.recipes.map((recipe, index) => (
-            <h4 key={index}>
-              {recipe.name}
-              {recipe.recStatus && <i className="fas fa-dragon" />}
-              {recipe.recipeMat}
-            </h4>
-          ))}
+            <>
+                <h4 key={index}>
+                {recipe.name}
+                {recipe.recStatus && <i className="fas fa-dragon" />}
+                </h4>
+                
+                
+                <h3 >
+                {recipe.recipeMat}
+                </h3>
+            
+           
+            </>
+         
+            
+          
+        ))}
+        
         </div>
+
+        
         <input
           type="text"
           value={this.state.newRecipe}
