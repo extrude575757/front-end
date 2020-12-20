@@ -1,7 +1,9 @@
 {
   "name": "client",
   "version": "0.1.0",
-  "private": true,
+  "description": "",
+  "keywords": [],
+  "main": "src/index.js",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
