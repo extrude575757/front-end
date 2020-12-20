@@ -16,7 +16,7 @@ export const recipesReducer = (state = initialState, action) => {
         ...state,
         recipes: [
           ...state.recipes,
-          { name: action.payload, recStatus: false }
+          { name: action.payload, recStatus: false, recipeMat: action.payload }
         ]
       };
       case ADD_NEW_RECIPE_MAT:
@@ -24,7 +24,7 @@ export const recipesReducer = (state = initialState, action) => {
         ...state,
         recipes: [
           ...state.recipes,
-          { recipeMat: action.payload }
+          {  recipeMat: action.payload }
         ]
       };
     default:

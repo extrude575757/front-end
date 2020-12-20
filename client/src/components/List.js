@@ -9,7 +9,7 @@ class List extends React.Component {
   };
 
   handleChanges = (e) => {
-    this.setState({ newRecipe: e.target.value });
+    this.setState({ newRecipe: e.target.value});
   };
   handleMatChanges = (e) => {
     this.setState({ newRecipeMat: e.target.value });
@@ -23,6 +23,7 @@ class List extends React.Component {
             <h4 key={index}>
               {recipe.name}
               {recipe.recStatus && <i className="fas fa-dragon" />}
+              {recipe.recipeMat}
             </h4>
           ))}
         </div>
