@@ -6,7 +6,7 @@ import { Provider } from "react-redux";
 import Title from "./components/Title";
 import List from "./components/List";
 // import { titleReducer } from "./reducers/titleReducer";
-// import { membersReducer } from "./reducers/membersReducer";
+// import { recipesReducer } from "./reducers/recipesReducer";
 import rootReducer from "./reducers";
 
 import "./styles.css";
