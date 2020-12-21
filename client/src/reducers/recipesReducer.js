@@ -2,8 +2,16 @@ import { ADD_NEW_RECIPE, EDIT_RECIPE } from "../actions/recipeActions";
 
 const initialState = {
   recipes: [
-    { name: "Shrimp Bobtail", recStatus: true, recipeMat:"Tommato, fishkilts, stomach broth", recipeDir: ['Two table spoons Sardines','Three table spoons Lettus'] },
-    { name: "Gumbo Soup", recStatus: false,  recipeMat:"Sardines, Lettus", recipeDir: ['Two table spoons Sardines','Three table spoons Lettus'] }
+    { name: "Shrimp Bobtail", recStatus: true, 
+    recipeMat:"Shrimp, Sardines, Crab, Oyster, Clam, Lettus, Pineapple, Cabbage, Cranberrie, Strawberry, Optional To Addin: Tommato, fishkilts and stomach broth", 
+    recipeDir: ['20 OZ Shrimp + Sardines ',
+    '2LBs Crab with 9OZ oyster and clam chowder sauce mixed ',
+    '1 LB each of Lettus, pineapple & cabbage mixed with 6 OZ Fresh Cranberries or Strawberries ', 
+    'Combine All 3 Mixes together to Make the Shrimp Bobtail '] },
+    { name: "Gumbo Soup", recStatus: false,  
+    recipeMat:"Sardines, Yellow Mustard, Carrots, Cabbage, Lettus", 
+    recipeDir: ['2 LBs spoons Sardines',' 8 OZ Yellow Mustard',
+    '3 LBs spoons Lettus, Carrots, and Cabbage'] }
   ],
   recStatus: true
 };
