@@ -24,17 +24,17 @@ const store = createStore(rootReducer, applyMiddleware(logger));
 
 function App() {
   return (
-    <div className="App">
-      <Title id="0" />
-      <List id="1" />
+    <div id="0" className="App">
+      <Title id="1" />
+      <List id="2" />
     </div>
   );
 }
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(
-  <Provider store={store}>
-    <App id="2" />
+  <Provider id="3" store={store}>
+    <App id="4" />
   </Provider>,
   rootElement
 );

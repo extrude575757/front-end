@@ -7,7 +7,7 @@ class List extends React.Component {
   constructor(props){
     super(props);
         this.state = {
-          newRecipe: "", recStatus: false, newRecipeMat: "", editStatus: false
+          newRecipe: "", recStatus: false, newRecipeMat: "", editStatus: false, newRecipeDir:""
         };
   }
         handleChanges = (e) => {
@@ -15,6 +15,9 @@ class List extends React.Component {
         };
         handleMatChanges = (e) => {
           this.setState({ newRecipeMat: e.target.value });
+        };
+        handleDirChanges = (e) =>{
+          this.setState({newRecipeDir: e.target.value})
         };
         handleRecStatus = (e) =>{
           this.props.editRecipe();
@@ -43,7 +46,8 @@ class List extends React.Component {
                     (
                        <h4 key={index+1}  onClick={this.handleRecStatus}>
                       <i className="fas">
-                      Edit
+                      Edit All 
+                    
                       </i>
                       </h4> 
                     ):
@@ -56,6 +60,9 @@ class List extends React.Component {
                     <h3 key={index+3}>
                     {recipe.recipeMat}
                     </h3>
+                    <p key={index+4}>
+                        {recipe.recipeDir}
+                    </p>
                 </div>
             </>
         ))}
@@ -73,6 +80,12 @@ class List extends React.Component {
           value={this.state.newRecipeMat}
           onChange={this.handleMatChanges}
           placeholder="Add new Recipe Materials"
+        />
+        <input
+          type="text"
+          value={this.state.newRecipeDir}
+          onChange={this.handleDirChanges}
+          placeholder="Add new Recipe Directions"
         />
         <button
           onClick={() => {
