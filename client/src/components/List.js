@@ -31,7 +31,7 @@ class List extends React.Component {
                 <div className="recipeCard">
                     <h2 key={index}>
                     {recipe.name}
-                    {recipe.recStatus && <i className="fas fa-dragon" onClick={this.handleRecStatus} />}
+                    {recipe.recStatus && <i className="fas fa-dragon" onClick={this.handleRecStatus} /> }
                     </h2>
                     <h3 >
                     {recipe.recipeMat}

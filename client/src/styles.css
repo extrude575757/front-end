@@ -76,7 +76,17 @@ button:focus {
   align-items: center;
   padding: 36px;
 }
+div.recipeCard i{
+  font-size: 12px;
+  width:5%;
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  float:right;
+  justify-content: right;
+  flex-flow: row nowrap;
 
+}
 h2 {
   margin: 4px 0;
   border-bottom: 1px solid white;
@@ -89,6 +99,8 @@ h2 {
 }
 
 .fa-dragon {
+  display: block;
+  float:right;
   position: absolute;
   right: 12px;
   top: 9px;
