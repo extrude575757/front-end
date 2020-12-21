@@ -1,5 +1,5 @@
 export const ADD_NEW_RECIPE = "ADD_NEW_RECIPE";
-export const ADD_NEW_RECIPE_MAT = "ADD_NEW_RECIPE_MAT";
+export const EDIT_RECIPE = "EDIT_RECIPE";
 export const addNewRecipe = (recipe) => {
   return {
     type: ADD_NEW_RECIPE,
@@ -7,9 +7,8 @@ export const addNewRecipe = (recipe) => {
   };
 };
 
-// export const addNewRecipeMat = (recipeMatName) => {
-//   return {
-//     type: ADD_NEW_RECIPE_MAT,
-//     payload: recipeMatName
-//   };
-// };
+export const editRecipe = () => {
+  return {
+    type: EDIT_RECIPE
+  };
+};

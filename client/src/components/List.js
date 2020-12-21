@@ -1,26 +1,30 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import { addNewRecipe } from "../actions/recipeActions";
+import { addNewRecipe, editRecipe } from "../actions/recipeActions";
 
 class List extends React.Component {
-  state = {
-    newRecipe: "", recStatus: false, newRecipeMat: ""
-  };
-
-  handleChanges = (e) => {
-    this.setState({ newRecipe: e.target.value});
-  };
-  handleMatChanges = (e) => {
-    this.setState({ newRecipeMat: e.target.value });
-  };
-  handleRecStatus = (e) =>{
-    this.setState({recStatus: !this.state.recStatus})
-    console.log('hi'+this.state.recStatus)
-
-
-  };
-
+  constructor(props){
+    super(props);
+        this.state = {
+          newRecipe: "", recStatus: false, newRecipeMat: ""
+        };
+  }
+        handleChanges = (e) => {
+          this.setState({ newRecipe: e.target.value});
+        };
+        handleMatChanges = (e) => {
+          this.setState({ newRecipeMat: e.target.value });
+        };
+        handleRecStatus = (e) =>{
+          this.props.editRecipe();
+          this.setState({recStatus: !this.state.recStatus})
+          console.log('status '+this.state.recStatus)
+      
+      
+        };
+  
+  
   render() {
     return (
       <React.Fragment>
@@ -31,9 +35,18 @@ class List extends React.Component {
                 <div className="recipeCard">
                     <h2 key={index}>
                     {recipe.name}
-                    {recipe.recStatus && <i className="fas fa-dragon" onClick={this.handleRecStatus} /> }
+                    
                     </h2>
-                    <h3 >
+                   
+                    {recipe.recStatus ?
+                     <h4 key={index+1}>
+                      ( <i className="fas fa-dragon" onClick={this.handleRecStatus} >Edit </i>)
+                      </h4> :
+                      <h5>
+                        (<i className="fas fa-dragon"onClick={this.handleRecStatus} ></i>) 
+                        </h5>}
+                    
+                    <h3 key={index+2}>
                     {recipe.recipeMat}
                     </h3>
                 </div>
@@ -69,8 +82,9 @@ class List extends React.Component {
 }
 const mapStateToProps = (state) => {
   return {
-    recipes: state.recipesReducer.recipes
+    recipes: state.recipesReducer.recipes,
+    recStatus: state.recipesReducer.recStatus
   };
 };
 
-export default connect(mapStateToProps, { addNewRecipe })(List);
+export default connect(mapStateToProps, { addNewRecipe, editRecipe })(List);

@@ -25,8 +25,8 @@ const store = createStore(rootReducer, applyMiddleware(logger));
 function App() {
   return (
     <div className="App">
-      <Title />
-      <List />
+      <Title id="0" />
+      <List id="1" />
     </div>
   );
 }
@@ -34,7 +34,7 @@ function App() {
 const rootElement = document.getElementById("root");
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <App id="2" />
   </Provider>,
   rootElement
 );

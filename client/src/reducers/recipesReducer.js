@@ -1,10 +1,11 @@
-import { ADD_NEW_RECIPE } from "../actions/recipeActions";
+import { ADD_NEW_RECIPE, EDIT_RECIPE } from "../actions/recipeActions";
 
 const initialState = {
   recipes: [
     { name: "Shrimp Bobtail", recStatus: true, recipeMat:"Tommato, fishkilts, stomach broth" },
     { name: "Gumbo Soup", recStatus: false,  recipeMat:"Sardines, Lettus" }
-  ]
+  ],
+  recStatus: true
 };
 
 export const recipesReducer = (state = initialState, action) => {
@@ -21,15 +22,11 @@ export const recipesReducer = (state = initialState, action) => {
           { name: action.payload.newRecipe, recStatus: action.payload.recStatus, recipeMat: action.payload.newRecipeMat }
         ]
       };
-      // case ADD_NEW_RECIPE_MAT:
-      // return {
-      //   ...state,
-      //   recipes: [
-      //     ...state.recipes,
-      //     {recipeMat: action.payload },
-          
-      //   ]
-      // };
+      case EDIT_RECIPE:
+        return {
+          ...state,
+          recStatus: !state.recStatus
+        };
     default:
       return state;
   }
