@@ -7,7 +7,7 @@ class List extends React.Component {
   constructor(props){
     super(props);
         this.state = {
-          newRecipe: "", recStatus: false, newRecipeMat: ""
+          newRecipe: "", recStatus: false, newRecipeMat: "", editStatus: false
         };
   }
         handleChanges = (e) => {
@@ -19,6 +19,7 @@ class List extends React.Component {
         handleRecStatus = (e) =>{
           this.props.editRecipe();
           this.setState({recStatus: !this.state.recStatus})
+          this.setState({editStatus: !this.state.editStatus})
           console.log('status '+this.state.recStatus)
       
       
@@ -38,15 +39,21 @@ class List extends React.Component {
                     
                     </h2>
                    
-                    {recipe.recStatus ?
-                     <h4 key={index+1}>
-                      ( <i className="fas fa-dragon" onClick={this.handleRecStatus} >Edit </i>)
-                      </h4> :
-                      <h5>
-                        (<i className="fas fa-dragon"onClick={this.handleRecStatus} ></i>) 
-                        </h5>}
+                    {this.state.recStatus ?
+                    (
+                       <h4 key={index+1}  onClick={this.handleRecStatus}>
+                      <i className="fas">
+                      Edit
+                      </i>
+                      </h4> 
+                    ):
+                      (
+                        <h4 key={index+2} onClick={this.handleRecStatus}>
+                        <i className="fas fa-dragon" ></i> 
+                        </h4>
+                      )}
                     
-                    <h3 key={index+2}>
+                    <h3 key={index+3}>
                     {recipe.recipeMat}
                     </h3>
                 </div>
@@ -83,7 +90,7 @@ class List extends React.Component {
 const mapStateToProps = (state) => {
   return {
     recipes: state.recipesReducer.recipes,
-    recStatus: state.recipesReducer.recStatus
+    editStatus: state.recipesReducer.recStatus
   };
 };
 
