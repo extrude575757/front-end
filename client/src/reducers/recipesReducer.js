@@ -22,7 +22,7 @@ export const recipesReducer = (state = initialState, action) => {
           { name: action.payload.newRecipe, 
             recStatus: action.payload.recStatus,
             recipeMat: action.payload.newRecipeMat,
-            recipeDir: action.payload.recipeDir 
+            recipeDir: action.payload.newRecipeDir 
           }
         ]
       };
