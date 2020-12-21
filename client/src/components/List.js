@@ -5,7 +5,7 @@ import { addNewRecipe } from "../actions/recipeActions";
 
 class List extends React.Component {
   state = {
-    newRecipe: "", newRecipeMat: ""
+    newRecipe: "", recStatus: false, newRecipeMat: ""
   };
 
   handleChanges = (e) => {
@@ -13,6 +13,12 @@ class List extends React.Component {
   };
   handleMatChanges = (e) => {
     this.setState({ newRecipeMat: e.target.value });
+  };
+  handleRecStatus = (e) =>{
+    this.setState({recStatus: !this.state.recStatus})
+    console.log('hi'+this.state.recStatus)
+
+
   };
 
   render() {
@@ -22,23 +28,17 @@ class List extends React.Component {
 <div className="friends-list">
           {this.props.recipes.map((recipe, index) => (
             <>
-                <h4 key={index}>
-                {recipe.name}
-                {recipe.recStatus && <i className="fas fa-dragon" />}
-                </h4>
-                
-                
-                <h3 >
-                {recipe.recipeMat}
-                </h3>
-            
-           
+                <div className="recipeCard">
+                    <h2 key={index}>
+                    {recipe.name}
+                    {recipe.recStatus && <i className="fas fa-dragon" onClick={this.handleRecStatus} />}
+                    </h2>
+                    <h3 >
+                    {recipe.recipeMat}
+                    </h3>
+                </div>
             </>
-         
-            
-          
         ))}
-        
         </div>
 
         

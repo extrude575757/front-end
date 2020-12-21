@@ -60,7 +60,16 @@ button:hover {
 button:focus {
   outline: none;
 }
-
+.recipeCard{
+  padding:.2rem;
+  margin:.8rem;
+  background:brown;
+  width:40%;
+  display:flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  /* justify-content: space-evenly; */
+}
 .friends-list {
   display: flex;
   flex-flow: column nowrap;
@@ -68,12 +77,13 @@ button:focus {
   padding: 36px;
 }
 
-h4 {
+h2 {
   margin: 4px 0;
   border-bottom: 1px solid white;
   padding: 6px;
   position: relative;
-  width: 180px;
+  /* width: 180px; */
+  width: 60%;
   display: flex;
   cursor: pointer;
 }
