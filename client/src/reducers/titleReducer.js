@@ -1,7 +1,7 @@
 import { TOGGLE_EDITING, SET_TITLE } from "../actions/titleActions";
 
 const initialState = {
-  title: "Dragon Member List 🐲",
+  title: "Recipes List 🐲",
   editing: false
 };
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import { addNewRecipe, addNewRecipeMat } from "../actions/recipeActions";
+import { addNewRecipe } from "../actions/recipeActions";
 
 class List extends React.Component {
   state = {
@@ -56,8 +56,9 @@ class List extends React.Component {
         />
         <button
           onClick={() => {
-            this.props.addNewRecipe(this.state.newRecipe);
-            this.props.addNewRecipeMat(this.state.newRecipeMat);
+            this.props.addNewRecipe(this.state);
+            // this.props.addNewRecipe(this.state.newRecipe);
+            // this.props.addNewRecipeMat(this.state.newRecipeMat);
           }}
         >
           Add recipe
@@ -72,4 +73,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { addNewRecipe, addNewRecipeMat })(List);
+export default connect(mapStateToProps, { addNewRecipe })(List);

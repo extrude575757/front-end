@@ -1,4 +1,4 @@
-import { ADD_NEW_RECIPE, ADD_NEW_RECIPE_MAT } from "../actions/recipeActions";
+import { ADD_NEW_RECIPE } from "../actions/recipeActions";
 
 const initialState = {
   recipes: [
@@ -18,18 +18,18 @@ export const recipesReducer = (state = initialState, action) => {
         recipes: [
           ...state.recipes,
           
-          { name: action.payload, recStatus: false }
+          { name: action.payload.newRecipe, recStatus: false, recipeMat: action.payload.newRecipeMat }
         ]
       };
-      case ADD_NEW_RECIPE_MAT:
-      return {
-        ...state,
-        recipes: [
-          ...state.recipes,
-          {recipeMat: action.payload },
+      // case ADD_NEW_RECIPE_MAT:
+      // return {
+      //   ...state,
+      //   recipes: [
+      //     ...state.recipes,
+      //     {recipeMat: action.payload },
           
-        ]
-      };
+      //   ]
+      // };
     default:
       return state;
   }
