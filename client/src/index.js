@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
-
+// import TodoIndex from "./editForm/TodoIndex"
 import Title from "./components/Title";
 import List from "./components/List";
 // import { titleReducer } from "./reducers/titleReducer";
@@ -10,6 +10,7 @@ import List from "./components/List";
 import rootReducer from "./reducers";
 
 import "./styles.css";
+import TodoIndex from "./editForm/TodoIndex";
 
 const logger = (store) => (next) => (action) => {
   console.group(action.type);
@@ -27,6 +28,7 @@ function App() {
     <div id="0" className="App">
       <Title id="1" />
       <List id="2" />
+      <TodoIndex id="5" />
     </div>
   );
 }

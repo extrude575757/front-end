@@ -19,8 +19,9 @@ i {
 }
 
 input {
+
   padding: 6px;
-  background: none;
+  background: black;
   border: none;
   color: white;
   border-bottom: 1px solid white;
