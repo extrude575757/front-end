@@ -4,7 +4,7 @@ body {
   width: 100%;
   padding: 0;
   margin: 0;
-  background-image: linear-gradient(#a88197, #56598f);
+  background-image: linear-gradient(#56598f,#838491,#56598f,#56598f,#838491,#56598f,#63c456,#56598f, #797cb9);
   color: white;
 }
 
@@ -18,6 +18,18 @@ i {
   font-size: 12px;
 }
 
+
+
+nav{
+
+  display:flex;
+  
+  padding:.1rem;
+  margin:0rem .5rem .5rem .5rem;
+  width:100%;
+  height:100%;
+  background-color: black;
+}
 input {
 
   padding: 6px;

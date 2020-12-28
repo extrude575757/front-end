@@ -8,6 +8,7 @@ import List from "./components/List";
 // import { titleReducer } from "./reducers/titleReducer";
 // import { recipesReducer } from "./reducers/recipesReducer";
 import rootReducer from "./reducers";
+import Nav from "./components/navbar/Nav"
 
 import "./styles.css";
 import TodoIndex from "./editForm/TodoIndex";
@@ -26,9 +27,10 @@ const store = createStore(rootReducer, applyMiddleware(logger));
 function App() {
   return (
     <div id="0" className="App">
-      <Title id="1" />
-      <List id="2" />
-      <TodoIndex id="5" />
+      <Nav id="1" />
+      <Title id="2" />
+      <List id="3" />
+      <TodoIndex id="4" />
     </div>
   );
 }
