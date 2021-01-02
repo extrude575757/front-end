@@ -7,7 +7,8 @@ class List extends React.Component {
   constructor(props){
     super(props);
         this.state = {
-          newRecipe: "", recStatus: false, newRecipeMat: "", editStatus: false
+          newRecipe: "", recStatus: false, newRecipeMat: "",
+          editStatus: false
         };
   }
         handleChanges = (e) => {

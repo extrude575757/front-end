@@ -6,7 +6,7 @@
 
 export const TOGGLE_EDITING = "TOGGLE_EDITING";
 export const SET_TITLE = "SET_TITLE";
-
+export const SET_CATEGORY = "SET_CATEGORY";
 export const toggleEditing = () => {
   return {
     type: TOGGLE_EDITING
@@ -14,6 +14,9 @@ export const toggleEditing = () => {
 };
 
 export const setTitle = (newTitle) => {
+
+
+  
   return {
     type: SET_TITLE,
     payload: newTitle
