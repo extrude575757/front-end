@@ -1,12 +1,12 @@
 import { TOGGLE_EDITING, SET_TITLE } from "../actions/titleActions";
 
 const initialState = {
-  title: "Recipes List 🐲",
+  title: "Fish",
   editing: false
 };
 
 export const titleReducer = (state = initialState, action) => {
-  console.log(`bk: titleReducer.js: action: `, action);
+  console.log(`NAL: titleReducer.js: action: `, action);
   switch (action.type) {
     case SET_TITLE:
       return {
