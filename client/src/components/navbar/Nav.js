@@ -7,14 +7,18 @@ class Nav extends React.Component {
   constructor(props){
     super(props);
         this.state = {
-          newRecipe: "", recStatus: false, newRecipeMat: "", editStatus: false, newRecipeDir:""
+          catLink: ['Fish',{FishCat1:'Shrimp Bobtail',FishCat2:'Gumbo Soup'}
+                  ,'Salad',{SaladCat1:'Qual Salad'}
+        ],
+          newRecipe: "", recStatus: false, theCategory: "", 
+          editStatus: false, newRecipeDir:""
         };
   }
         handleChanges = (e) => {
           this.setState({ newRecipe: e.target.value});
         };
         handleMatChanges = (e) => {
-          this.setState({ newRecipeMat: e.target.value });
+          this.setState({ theCategory: e.target.value });
         };
         handleDirChanges = (e) =>{
           this.setState({newRecipeDir: e.target.value})
