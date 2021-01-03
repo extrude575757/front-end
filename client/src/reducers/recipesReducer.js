@@ -1,4 +1,4 @@
-import { ADD_NEW_RECIPE, EDIT_RECIPE } from "../actions/recipeActions";
+import { ADD_NEW_RECIPE, EDIT_RECIPE, EDIT_MAT } from "../actions/recipeActions";
 
 const initialState = {
   recipes: [
@@ -17,7 +17,7 @@ const initialState = {
 };
 
 export const recipesReducer = (state = initialState, action) => {
-  /// need help here keeps displaying wrong no matter how i put the states
+  
   console.log(`NAL: recipesReducer: action: `, action);
   switch (action.type) {
     case ADD_NEW_RECIPE:
@@ -39,6 +39,17 @@ export const recipesReducer = (state = initialState, action) => {
           ...state,
           recStatus: !state.recStatus
         };
+      case EDIT_MAT:
+          return{
+            ...state,
+            recipes: [
+              ...state.recipes,
+              
+              { 
+                recipeMat: action.payload.newRecipeMat
+              }
+            ]
+          };
     default:
       return state;
   }

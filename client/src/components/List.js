@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import { addNewRecipe, editRecipe } from "../actions/recipeActions";
+import { addNewRecipe, editRecipe, editMat } from "../actions/recipeActions";
 
 class List extends React.Component {
   constructor(props){
@@ -24,8 +24,6 @@ class List extends React.Component {
           this.setState({recStatus: !this.state.recStatus})
           this.setState({editStatus: !this.state.editStatus})
           console.log('status '+this.state.recStatus)
-      
-      
         };
   
   
@@ -53,11 +51,30 @@ class List extends React.Component {
                     ):
                       (
                         <h4 key={index.id} onClick={this.handleRecStatus}>
-                        <i className="fas fa-dragon" ></i> 
+                        <i className="fas fa-dragon" ></i>
+                         
                         </h4>
-                      )}
+                        
+                      )
+                      
+                      }
                     
-                    <h3 key={index.id}>
+                    <h3 key={index.id} onClick={() =>{
+
+
+/// Makes a brand new card Maybe need a new Compionent and use component did mount
+                     ( <input
+                      type="text"
+                      value={this.state.newRecipeMat}
+                      onChange={this.handleMatChanges}
+                      placeholder="Add new Recipe Materials"
+                      
+                       >
+                          new Mat here
+                      </input>)
+                      this.props.editMat(this.state.newRecipeMat);
+                    }}>
+                      
                     {recipe.recipeMat}
                     </h3>
                     <p key={index.id}>
@@ -107,4 +124,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { addNewRecipe, editRecipe })(List);
+export default connect(mapStateToProps, { addNewRecipe, editRecipe, editMat })(List);
