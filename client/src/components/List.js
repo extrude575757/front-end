@@ -87,7 +87,7 @@ class List extends React.Component {
         ))}
         </div>
 
-        
+{/*         
         <input
           type="text"
           value={this.state.newRecipe}
@@ -114,7 +114,7 @@ class List extends React.Component {
           }}
         >
           Add recipe
-        </button>
+        </button> */}
       </React.Fragment>
     );
   }

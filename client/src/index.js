@@ -9,7 +9,7 @@ import List from "./components/List";
 // import { recipesReducer } from "./reducers/recipesReducer";
 import rootReducer from "./reducers";
 import Nav from "./components/navbar/Nav"
-
+import CardAdd from "./components/CardAdd";
 import "./styles.css";
 import TodoIndex from "./editForm/TodoIndex";
 
@@ -30,7 +30,7 @@ function App() {
       <Nav key="0" />
       <Title key="0" />
       <List key="0" />
-      <TodoIndex key="0" />
+      <CardAdd key="0" />
     </div>
   );
 }
