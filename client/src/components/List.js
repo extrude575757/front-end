@@ -27,8 +27,7 @@ class List extends React.Component {
           console.log('status '+this.state.recStatus)
         };
         handleh3 = (e) =>{
-          /// Makes a brand new card Maybe need a new Compionent and use component did mount
-          if(this.state.recStatus){
+         if(this.state.recStatus){
             ( <input
               type="text"
               value={this.state.newRecipeMat}
@@ -38,7 +37,6 @@ class List extends React.Component {
                >
                   new Mat here
               </input>)
-              //Changes bercause of the editmat
               this.props.editMat(this.state.newRecipeMat);
            }
         }
