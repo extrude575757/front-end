@@ -1,9 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import { addNewRecipe, editRecipe, editMat } from "../actions/recipeActions";
-import CardAdd from "./CardAdd"
-class List extends React.Component {
+import { addNewRecipe, editRecipe, editMat } from "../../actions/recipeActions";
+
+class List2 extends React.Component {
   constructor(props){
     super(props);
         this.state = {
@@ -47,68 +47,45 @@ class List extends React.Component {
     return (
       <React.Fragment>
 
-{this.state.recStatus ?
+<div className="friends-list">
+          {this.props.recipes.map((recipe, index) => (
+            <>
+                <div className="recipeCard">
+                    <h2 key={index.id}>
+                    {recipe.name}
+                    
+                    </h2>
+                   
+                    {this.state.recStatus ?
                     (
-                      <>
-
-              <div className="friends-list">
-                        {this.props.recipes.map((recipe, index) => (
-                          <>
-                           { // Make this as editCard Component instead 
-                           
-                           }
-                              <CardAdd />
-
-                                  <h4 key={index.id}  onClick={this.handleRecStatus}>
-                                    <i className="fas">
-                                    Edit All 
-                                  
-                                    </i>
-                                  </h4> 
-                                  
-                                  
-                          </>
-                      ))}
-                      </div>
-
-                       
-                        </>
+                       <h4 key={index.id}  onClick={this.handleRecStatus}>
+                          <i className="fas">
+                          Edit All 
+                        
+                          </i>
+                        </h4> 
                     ):
-                    (
-                      <>
-
-              <div className="friends-list">
-                        {this.props.recipes.map((recipe, index) => (
-                          <>
-                              <div className="recipeCard">
-                                  <h2 key={index.id}>
-                                  {recipe.name}
-                                  
-                                  </h2>
-                                  <h4 key={index.id}  onClick={this.handleRecStatus}>
-                                  <i className="fas fa-dragon" ></i>
-                                  </h4> 
-                                  
-                                  <h3 key={index.id}>
-                                    
-                                  {recipe.recipeMat}
-                                  </h3>
-                                  <p key={index.id}>
-                                      {recipe.recipeDir}
-                                  </p>
-                                  
-                              </div>
-                          </>
-                      ))}
-                      </div>
-
-                       
-                        </>
-                    )
+                      (
+                        <h4 key={index.id} onClick={this.handleRecStatus}>
+                        <i className="fas fa-dragon" ></i>
+                         
+                        </h4>
+                        
+                      )
                       
                       }
                     
-
+                    <h3 key={index.id}>
+                      
+                    {recipe.recipeMat}
+                    </h3>
+                    <p key={index.id}>
+                        {recipe.recipeDir}
+                    </p>
+                </div>
+            </>
+        ))}
+        </div>
 
 {/*         
         <input
@@ -149,4 +126,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { addNewRecipe, editRecipe, editMat })(List);
+export default connect(mapStateToProps, { addNewRecipe, editRecipe, editMat })(List2);
