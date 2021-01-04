@@ -53,19 +53,19 @@ class CardEdit extends React.Component {
           type="text"
           value={this.state.newRecipe}
           onChange={this.handleChanges}
-          placeholder="Add new Recipe Title"
+          placeholder="Edit New Recipe Title"
         />
         <input
           type="text"
           value={this.state.newRecipeMat}
           onChange={this.handleMatChanges}
-          placeholder="Add new Recipe Materials"
+          placeholder="Edit New Recipe Materials"
         />
         <input
           type="text"
           value={this.state.newRecipeDir}
           onChange={this.handleDirChanges}
-          placeholder="Add new Recipe Directions"
+          placeholder="Edit New Recipe Directions"
         />
         <button
           onClick={() => {
@@ -74,7 +74,7 @@ class CardEdit extends React.Component {
             // this.props.addNewRecipeMat(this.state.newRecipeMat);
           }}
         >
-          Add recipe
+          Edit Recipes
         </button>
       </React.Fragment>
     );

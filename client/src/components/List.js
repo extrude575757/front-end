@@ -2,7 +2,8 @@ import React from "react";
 import { connect } from "react-redux";
 
 import { addNewRecipe, editRecipe, editMat } from "../actions/recipeActions";
-import CardAdd from "./CardAdd"
+import CardAdd from "./CardAdd";
+import CardEdit from "./CardEdit";
 class List extends React.Component {
   constructor(props){
     super(props);
@@ -55,11 +56,11 @@ class List extends React.Component {
                            { // Make this as editCard Component instead 
                            
                            }
-                              <CardAdd />
+                              <CardEdit />
 
                                   <h4 key={index.id}  onClick={this.handleRecStatus}>
                                     <i className="fas">
-                                    Edit All 
+                                    Save 
                                   
                                     </i>
                                   </h4> 
@@ -84,7 +85,7 @@ class List extends React.Component {
                                   
                                   </h2>
                                   <h4 key={index.id}  onClick={this.handleRecStatus}>
-                                  <i className="fas fa-dragon" ></i>
+                                  <i className="fas fa-dragon" >Edit</i>
                                   </h4> 
                                   
                                   <h3 key={index.id}>
