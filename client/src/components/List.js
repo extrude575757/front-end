@@ -7,7 +7,8 @@ class List extends React.Component {
   constructor(props){
     super(props);
         this.state = {
-          newRecipe: "", recStatus: false, newRecipeMat: "", editStatus: false, newRecipeDir:""
+          newRecipe: "", recStatus: false, 
+          newRecipeMat: "", editStatus: false, newRecipeDir:""
         };
   }
         handleChanges = (e) => {
@@ -25,7 +26,22 @@ class List extends React.Component {
           this.setState({editStatus: !this.state.editStatus})
           console.log('status '+this.state.recStatus)
         };
-  
+        handleh3 = (e) =>{
+          /// Makes a brand new card Maybe need a new Compionent and use component did mount
+          if(this.state.recStatus){
+            ( <input
+              type="text"
+              value={this.state.newRecipeMat}
+              onChange={this.handleMatChanges}
+              placeholder="Add new Recipe Materials"
+              
+               >
+                  new Mat here
+              </input>)
+              //Changes bercause of the editmat
+              this.props.editMat(this.state.newRecipeMat);
+           }
+        }
   
   render() {
     return (
@@ -43,11 +59,11 @@ class List extends React.Component {
                     {this.state.recStatus ?
                     (
                        <h4 key={index.id}  onClick={this.handleRecStatus}>
-                      <i className="fas">
-                      Edit All 
-                    
-                      </i>
-                      </h4> 
+                          <i className="fas">
+                          Edit All 
+                        
+                          </i>
+                        </h4> 
                     ):
                       (
                         <h4 key={index.id} onClick={this.handleRecStatus}>
@@ -59,21 +75,7 @@ class List extends React.Component {
                       
                       }
                     
-                    <h3 key={index.id} onClick={() =>{
-
-
-/// Makes a brand new card Maybe need a new Compionent and use component did mount
-                     ( <input
-                      type="text"
-                      value={this.state.newRecipeMat}
-                      onChange={this.handleMatChanges}
-                      placeholder="Add new Recipe Materials"
-                      
-                       >
-                          new Mat here
-                      </input>)
-                      this.props.editMat(this.state.newRecipeMat);
-                    }}>
+                    <h3 key={index.id}>
                       
                     {recipe.recipeMat}
                     </h3>
