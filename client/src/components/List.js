@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import { addNewRecipe, editRecipe, editMat } from "../actions/recipeActions";
+import { addNewRecipe, editRecipe, editNewRecipe } from "../actions/recipeActions";
 import CardAdd from "./CardAdd";
 import CardEdit from "./CardEdit";
 class List extends React.Component {
@@ -38,7 +38,7 @@ class List extends React.Component {
                >
                   new Mat here
               </input>)
-              this.props.editMat(this.state.newRecipeMat);
+              this.props.editNewRecipe(this.state);
            }
         }
   
@@ -56,7 +56,7 @@ class List extends React.Component {
                            { // Make this as editCard Component instead 
                            
                            }
-                              <CardEdit />
+                              <CardEdit key={recipe.id} recipe={recipe}/>
 
                                   <h4 key={index.id}  onClick={this.handleRecStatus}>
                                     <i className="fas">
@@ -79,7 +79,7 @@ class List extends React.Component {
               <div className="friends-list">
                         {this.props.recipes.map((recipe, index) => (
                           <>
-                              <div className="recipeCard">
+                              <div key={index.id} className="recipeCard">
                                   <h2 key={index.id}>
                                   {recipe.name}
                                   
@@ -148,4 +148,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { addNewRecipe, editRecipe, editMat })(List);
+export default connect(mapStateToProps, { addNewRecipe, editRecipe, editNewRecipe })(List);

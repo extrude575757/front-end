@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import { addNewRecipe, editRecipe, editMat } from "../actions/recipeActions";
+import { addNewRecipe, editRecipe, editNewRecipe } from "../actions/recipeActions";
 
 class CardEdit extends React.Component {
   constructor(props){
@@ -15,6 +15,8 @@ class CardEdit extends React.Component {
           this.setState({ newRecipe: e.target.value});
         };
         handleMatChanges = (e) => {
+          console.log('withinhandlematchanges',this.props.key)
+          console.log(this.props.recipes[0].recipeMat)
           this.setState({ newRecipeMat: e.target.value });
         };
         handleDirChanges = (e) =>{
@@ -51,25 +53,25 @@ class CardEdit extends React.Component {
         
         <input
           type="text"
-          value={this.state.newRecipe}
+          value={this.props.newRecipe}
           onChange={this.handleChanges}
           placeholder="Edit New Recipe Title"
         />
         <input
           type="text"
-          value={this.state.newRecipeMat}
+          value={this.props.newRecipeMat}
           onChange={this.handleMatChanges}
           placeholder="Edit New Recipe Materials"
         />
         <input
           type="text"
-          value={this.state.newRecipeDir}
+          value={this.props.newRecipeDir}
           onChange={this.handleDirChanges}
           placeholder="Edit New Recipe Directions"
         />
         <button
           onClick={() => {
-            this.props.addNewRecipe(this.state);
+            this.props.editNewRecipe(this.state.newRecipeMat);
             // this.props.addNewRecipe(this.state.newRecipe);
             // this.props.addNewRecipeMat(this.state.newRecipeMat);
           }}
@@ -87,4 +89,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { addNewRecipe, editRecipe, editMat })(CardEdit);
+export default connect(mapStateToProps, { addNewRecipe, editRecipe, editNewRecipe })(CardEdit);

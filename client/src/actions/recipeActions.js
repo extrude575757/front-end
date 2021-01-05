@@ -14,7 +14,7 @@ export const editRecipe = () => {
   };
 };
 
-export const editMat = (newMat) => {
+export const editNewRecipe = (newMat) => {
   return {
     type: EDIT_MAT,
     payload: newMat

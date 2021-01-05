@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import { addNewRecipe, editRecipe, editMat } from "../actions/recipeActions";
+import { addNewRecipe, editRecipe  } from "../actions/recipeActions";
 
 class CardAdd extends React.Component {
   constructor(props){
@@ -87,4 +87,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { addNewRecipe, editRecipe, editMat })(CardAdd);
+export default connect(mapStateToProps, { addNewRecipe, editRecipe })(CardAdd);

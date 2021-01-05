@@ -59,7 +59,6 @@ const mapStateToProps = ({ titleState }) => {
   };
 };
 
-// second param is object that are actioncreators
 
 export default connect(mapStateToProps, { toggleEditing, setTitle })(Title);
 
