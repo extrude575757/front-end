@@ -50,16 +50,16 @@ class List extends React.Component {
                     (
                       <>
 
-              <div className="friends-list">
+              <div key={"10"} className="friends-list">
                         {this.props.recipes.map((recipe, index) => (
                           <>
                            { // Make this as editCard Component instead 
                            
                            }
-                              <CardEdit key={recipe.id} recipe={recipe}/>
+                              <CardEdit key={index.toString()} recipe={recipe}/>
 
-                                  <h4 key={index.id}  onClick={this.handleRecStatus}>
-                                    <i className="fas">
+                                  <h4 key={(index+1).toString()}  onClick={this.handleRecStatus}>
+                                    <i key={(index+2).toString()} className="fas">
                                     Save 
                                   
                                     </i>
@@ -76,23 +76,23 @@ class List extends React.Component {
                     (
                       <>
 
-              <div className="friends-list">
+              <div key={"55"} className="friends-list">
                         {this.props.recipes.map((recipe, index) => (
                           <>
-                              <div key={index.id} className="recipeCard">
-                                  <h2 key={index.id}>
+                              <div key={index} className="recipeCard">
+                                  <h2 key={(index+1).toString()}>
                                   {recipe.name}
                                   
                                   </h2>
-                                  <h4 key={index.id}  onClick={this.handleRecStatus}>
-                                  <i className="fas fa-dragon" >Edit</i>
+                                  <h4 key={(index+2).toString()}  onClick={this.handleRecStatus}>
+                                  <i key={(index+3).toString()}className="fas fa-dragon" >Edit</i>
                                   </h4> 
                                   
-                                  <h3 key={index.id}>
+                                  <h3 key={(index+4).toString()}>
                                     
                                   {recipe.recipeMat}
                                   </h3>
-                                  <p key={index.id}>
+                                  <p key={(index+5).toString()}>
                                       {recipe.recipeDir}
                                   </p>
                                   

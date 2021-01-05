@@ -26,18 +26,18 @@ const store = createStore(rootReducer, applyMiddleware(logger));
 
 function App() {
   return (
-    <div key="0"  className="App">
-      <Nav key="0" />
-      <Title key="0" />
-      <List key="0" />
-      <CardAdd key="0" />
+    <div key="2"  className="App">
+      <Nav key="3" />
+      <Title key="4" />
+      <List key="5" />
+      <CardAdd key="6" />
     </div>
   );
 }
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(
-  <Provider key="2" store={store}>
+  <Provider key="0" store={store}>
     <App key="1" />
   </Provider>,
   rootElement

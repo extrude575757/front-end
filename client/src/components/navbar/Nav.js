@@ -38,14 +38,14 @@ class Nav extends React.Component {
       <React.Fragment>
 
 <div className="friends-list">
-        <nav> 
+        <nav key={0}> 
           {
                   
         // Get the recipe names
           this.props.recipes.map((recipe, index) => (
             <>
-                <div className="recipeCard">
-                    <h2 key={index.id}>
+                <div key={index.id} className="recipeCard">
+                    <h2 key={index}>
                     {recipe.name}
                     
                     </h2>

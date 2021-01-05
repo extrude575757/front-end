@@ -2,7 +2,7 @@ import { ADD_NEW_RECIPE, EDIT_RECIPE, EDIT_MAT } from "../actions/recipeActions"
 
 const initialState = {
   recipes: [
-    { name: "Shrimp Bobtail", recStatus: true, 
+    { name: "Shrimp Bobtail", recStatus: false, 
     recipeMat:"Shrimp, Sardines, Crab, Oyster, Clam, Lettus, Pineapple, Cabbage, Cranberrie, Strawberry, Optional To Addin: Tommato, fishkilts and stomach broth", 
     recipeDir: ['20 OZ Shrimp + Sardines ',
     '2LBs Crab with 9OZ oyster and clam chowder sauce mixed ',
@@ -46,6 +46,7 @@ export const recipesReducer = (state = initialState, action) => {
               ...state.recipes,
               
               { 
+                name: action.payload.newRecipeMat,
                 recipeMat: action.payload.newRecipeMat
               }
             ]
