@@ -81,7 +81,7 @@ class List extends React.Component {
                           <>
                               <div key={index} className="recipeCard">
                                   <h2 key={(index+1).toString()}>
-                                  {recipe.name}
+                                  {index + ' ' +recipe.name}
                                   
                                   </h2>
                                   <h4 key={(index+2).toString()}  onClick={this.handleRecStatus}>

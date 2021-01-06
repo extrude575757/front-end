@@ -27,7 +27,9 @@ export const recipesReducer = (state = initialState, action) => {
         recipes: [
           ...state.recipes,
           
-          { name: action.payload.newRecipe, 
+          {
+            id: action.payload.recId,
+             name: action.payload.newRecipe, 
             recStatus: action.payload.recStatus,
             recipeMat: action.payload.newRecipeMat,
             recipeDir: action.payload.newRecipeDir 
@@ -41,13 +43,15 @@ export const recipesReducer = (state = initialState, action) => {
         };
       case EDIT_MAT:
           return{
-            ...state,
+            ...state.recipes,
             recipes: [
-              ...state.recipes,
+              ...state,
               
               { 
-                name: action.payload.newRecipeMat,
-                recipeMat: action.payload.newRecipeMat
+                name: action.payload.newRecipe, 
+                recStatus: action.payload.recStatus,
+                recipeMat: action.payload.newRecipeMat,
+                recipeDir: action.payload.newRecipeDir 
               }
             ]
           };
