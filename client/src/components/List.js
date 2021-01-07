@@ -56,7 +56,7 @@ class List extends React.Component {
                            { // Make this as editCard Component instead 
                            
                            }
-                              <CardEdit key={index.toString()} recipe={recipe}/>
+                              <CardEdit key={index.toString()} oneToEdit={index} recipe={recipe}/>
 
                                   <h4 key={(index+1).toString()}  onClick={this.handleRecStatus}>
                                     <i key={(index+2).toString()} className="fas">

@@ -1,6 +1,5 @@
 import { ADD_NEW_RECIPE, EDIT_RECIPE, EDIT_MAT } from "../actions/recipeActions";
 
-
 const initialState = {
   recipes: [
     { name: "Shrimp Bobtail", recStatus: false, 

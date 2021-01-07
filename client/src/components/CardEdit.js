@@ -7,20 +7,23 @@ class CardEdit extends React.Component {
   constructor(props){
     super(props);
         this.state = {
-          newRecipe: "", recStatus: false, 
-          newRecipeMat: "", editStatus: false, newRecipeDir:""
+          newRecipe: this.props.recipes.name, recStatus: false, 
+          newRecipeMat: "", editStatus: false,
+           newRecipeDir: [""], oneToEdit: [0]
         };
   }
         handleChanges = (e) => {
           this.setState({ newRecipe: e.target.value});
-        };
+          };
         handleMatChanges = (e) => {
-          console.log('withinhandlematchanges',this.props.key)
-          console.log(this.props.recipes[0].recipeMat)
+          console.log('withinhandlematchanges',this.props.oneToEdit)
+          console.log(this.props.recipes[this.props.oneToEdit].name)
+          
           this.setState({ newRecipeMat: e.target.value });
-        };
+          };
         handleDirChanges = (e) =>{
-          this.setState({newRecipeDir: e.target.value})
+          this.setState({newRecipeDir: [e.target.value]})
+          
         };
         // handleRecStatus = (e) =>{
         //   this.props.editRecipe();
@@ -53,25 +56,31 @@ class CardEdit extends React.Component {
         
         <input
           type="text"
-          value={this.props.newRecipe}
+          value={this.state.newRecipe}
           onChange={this.handleChanges}
-          placeholder="Edit New Recipe Title"
+          placeholder={this.state.newRecipe}
         />
         <input
           type="text"
-          value={this.props.newRecipeMat}
+          value={this.state.newRecipeMat}
           onChange={this.handleMatChanges}
-          placeholder="Edit New Recipe Materials"
+          placeholder={this.state.newRecipeMat}
         />
         <input
           type="text"
-          value={this.props.newRecipeDir}
+          value={this.state.newRecipeDir[0]}
           onChange={this.handleDirChanges}
-          placeholder="Edit New Recipe Directions"
+          placeholder={this.state.newRecipeDir[0]}
         />
         <button
           onClick={() => {
-            this.props.editNewRecipe(this.state.newRecipeMat);
+
+            this.props.recipes[this.props.oneToEdit].recipeMat = this.state.newRecipeMat;
+            this.props.recipes[this.props.oneToEdit].name = this.state.newRecipe;
+        
+            this.props.recipes[this.props.oneToEdit].recipeDir = this.state.newRecipeDir;
+            
+            // this.props.editNewRecipe({recipes:this.state});
             // this.props.addNewRecipe(this.state.newRecipe);
             // this.props.addNewRecipeMat(this.state.newRecipeMat);
           }}
