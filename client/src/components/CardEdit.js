@@ -7,7 +7,7 @@ class CardEdit extends React.Component {
   constructor(props){
     super(props);
         this.state = {
-          newRecipe: this.props.recipes.name, recStatus: false, 
+          newRecipe: this.props.recipes[this.props.oneToEdit].name, recStatus: false, 
           newRecipeMat: "", editStatus: false,
            newRecipeDir: [""], oneToEdit: [0]
         };
