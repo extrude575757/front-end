@@ -6,10 +6,12 @@ import { addNewRecipe, editRecipe, editNewRecipe } from "../actions/recipeAction
 class CardEdit extends React.Component {
   constructor(props){
     super(props);
+    // newRecipeDir needs to either be changed into a string like all the others. or 
+    // Or the array elements each need a new line feature at each step of the directions so each array is one new line and has numeric srteps written out fro each procedure
         this.state = {
           newRecipe: this.props.recipes[this.props.oneToEdit].name, recStatus: false, 
-          newRecipeMat: "", editStatus: false,
-           newRecipeDir: [""], oneToEdit: [0]
+          newRecipeMat: this.props.recipes[this.props.oneToEdit].recipeMat, editStatus: false,
+           newRecipeDir:[ this.props.recipes[this.props.oneToEdit].recipeDir], oneToEdit: [0]
         };
   }
         handleChanges = (e) => {
@@ -85,7 +87,7 @@ class CardEdit extends React.Component {
             // this.props.addNewRecipeMat(this.state.newRecipeMat);
           }}
         >
-          Edit Recipes
+          1st Clk This Button Then Clk Save
         </button>
       </React.Fragment>
     );
