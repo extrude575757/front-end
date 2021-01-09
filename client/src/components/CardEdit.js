@@ -77,6 +77,7 @@ class CardEdit extends React.Component {
         <button
           onClick={() => {
 
+            
             this.props.recipes[this.props.oneToEdit].recipeMat = this.state.newRecipeMat;
             this.props.recipes[this.props.oneToEdit].name = this.state.newRecipe;
         
