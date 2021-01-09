@@ -12,6 +12,58 @@ import Nav from "./components/navbar/Nav"
 import CardAdd from "./components/CardAdd";
 import "./styles.css";
 import TodoIndex from "./editForm/TodoIndex";
+ 
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+
+import Login from './components/Login.js';
+import PrivateRoute from './components/PrivateRoute';
+
+
+
+function AppComp() {
+  return (
+    <div key="2"  className="App">
+      <Nav key="3" />
+      <Title key="4" />
+      <List key="5" />
+      <CardAdd key="6" />
+    </div>
+  );
+}
+
+
+function App() {
+  const logout = () => {
+    localStorage.removeItem('token')
+  };
+
+
+  return (
+    <Router>
+      <div className="App">
+        <ul>
+          <li>
+            <Link to="/login">Login</Link>
+          </li>
+          <li>
+            <Link onClick={logout}>Logout</Link>
+          </li>
+          <li>
+            <Link to="/protected">Recipes Page</Link>
+          </li>
+        </ul>
+        <Switch>
+          <PrivateRoute exact path="/protected" component={AppComp} />
+          <Route path="/login" component={Login} />
+          <Route component={Login} />
+        </Switch>
+      </div>
+    </Router>
+  );
+}
+
+export default App;
+
 
 const logger = (store) => (next) => (action) => {
   console.group(action.type);
@@ -24,16 +76,7 @@ const logger = (store) => (next) => (action) => {
 
 const store = createStore(rootReducer, applyMiddleware(logger));
 
-function App() {
-  return (
-    <div key="2"  className="App">
-      <Nav key="3" />
-      <Title key="4" />
-      <List key="5" />
-      <CardAdd key="6" />
-    </div>
-  );
-}
+
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(
