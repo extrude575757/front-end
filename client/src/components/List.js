@@ -68,7 +68,7 @@ class List extends React.Component {
                                   
                           </>
                       ))}
-                      </div>
+                </div>
 
                        
                         </>
@@ -99,7 +99,7 @@ class List extends React.Component {
                               </div>
                           </>
                       ))}
-                      </div>
+              </div>
 
                        
                         </>
