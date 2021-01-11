@@ -1,56 +1,32 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const morgan = require("morgan");
-const port = process.env.PORT || 5000;
+
 const app = express();
-const data = require("./data");
-const token = "ahuBHejkJJiMDhmODZhZi0zNWRhLTQ4ZjItOGZhYi1jZWYzOTA07i73Gebhu98";
+const db = require("./app/models");
+db.sequelize.sync();
+var corsOptions = {
+  origin: "http://localhost:8081"
+};
 
+app.use(cors(corsOptions));
+
+// parse requests of content-type - application/json
 app.use(bodyParser.json());
-app.use(cors());
-app.use(morgan('dev'));
 
-function authenticator(req, res, next) {
-  const { authorization } = req.headers;
-  if (authorization === token) {
-    next();
-  } else {
-    res.status(403).json({ error: "User must be logged in to do that." });
-  }
-}
+// parse requests of content-type - application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: true }));
 
-app.post("/api/login", (req, res) => {
-  const { username, password } = req.body;
-  if (username === "Greg" && password === "Dollars") {
-    req.loggedIn = true;
-    res.status(200).json({
-      payload: token
-    });
-  } else {
-    res
-      .status(403)
-      .json({ error: "Username or Password incorrect. Please see Readme" });
-  }
+// simple route
+app.get("/", (req, res) => {
+  res.json({ message: "Welcome to bezkoder application." });
 });
 
-app.post("/api/logout", (req, res) => {
-  const { userToken } = req.body;
-  if (t === token) {
-    //remove token from db
-  }
-  
-  res.status(200).json({
-    payload: token
-  });
+// set port, listen for requests
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}.`);
 });
 
-app.get("/api/data", authenticator, (req, res) => {
-  setTimeout(() => {
-    res.send(data);
-  }, 1000);
-});
 
-app.listen(port, () => {
-  console.log(`server listening on port ${port}`);
-});
+
