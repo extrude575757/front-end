@@ -12,7 +12,7 @@ import Nav from "./components/navbar/Nav"
 import CardAdd from "./components/CardAdd";
 import "./styles.css";
 import TodoIndex from "./editForm/TodoIndex";
- 
+ import Heading from "./Heading"
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 
 import Login from './components/Login.js';
@@ -41,17 +41,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <ul>
-          <li>
-            <Link to="/login">Login</Link>
-          </li>
-          <li>
-            <Link onClick={logout}>Logout</Link>
-          </li>
-          <li>
-            <Link to="/protected">Recipes Page</Link>
-          </li>
-        </ul>
+        <Heading />
         <Switch>
           <PrivateRoute exact path="/protected" component={AppComp} />
           <Route path="/login" component={Login} />
