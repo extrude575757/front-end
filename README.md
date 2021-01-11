@@ -9,4 +9,4 @@ Will allow you to Edit or view by each category within the dyamic NAV bar
 
 Will have a dynamic NAV bar of each category. Every Title for each recipe logged addition is a category.
 
-Will have a recipe API attached to a hook for start up examples on the main page after registering 
+Will have a recipe API attached to a hook for start up examples on the main page after registering npm run build
