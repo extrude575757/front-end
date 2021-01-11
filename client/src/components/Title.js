@@ -16,6 +16,9 @@ const Title = (props) => {
 
   return (
     <div>
+      <label for='category'>
+            Category
+          </label>
       {!props.editing ? (
         <h1>
           {props.title2}{" "}
@@ -30,6 +33,7 @@ const Title = (props) => {
         </h1>
       ) : (
         <div>
+          
           <input
             className="title-input"
             type="text"

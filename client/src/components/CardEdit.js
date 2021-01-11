@@ -55,19 +55,27 @@ class CardEdit extends React.Component {
       <React.Fragment>
 
 
-        
+        <label for='title'>
+        Title
+        </label>
         <input
           type="text"
           value={this.state.newRecipe}
           onChange={this.handleChanges}
           placeholder={this.state.newRecipe}
         />
+        <label for='materials'>
+          Materials
+        </label>
         <input
           type="text"
           value={this.state.newRecipeMat}
           onChange={this.handleMatChanges}
           placeholder={this.state.newRecipeMat}
         />
+        <label for='directions'>
+          Directions
+        </label>
         <input
           type="text"
           value={this.state.newRecipeDir[0]}

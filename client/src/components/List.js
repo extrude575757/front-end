@@ -80,6 +80,9 @@ class List extends React.Component {
                         {this.props.recipes.map((recipe, index) => (
                           <>
                               <div key={index} className="recipeCard">
+                                <label for='title'>
+                                  Title
+                                </label>
                                   <h2 key={(index+1).toString()}>
                                   {index + ' ' +recipe.name}
                                   
@@ -87,11 +90,16 @@ class List extends React.Component {
                                   <h4 key={(index+2).toString()}  onClick={this.handleRecStatus}>
                                   <i key={(index+3).toString()}className="fas fa-dragon" >Edit</i>
                                   </h4> 
-                                  
+                                  <label for='materials'>
+                                    Materials
+                                  </label>
                                   <h3 key={(index+4).toString()}>
                                     
                                   {recipe.recipeMat}
                                   </h3>
+                                  <label for='directions'>
+                                    Directions
+                                  </label>
                                   <p key={(index+5).toString()}>
                                       {recipe.recipeDir}
                                   </p>
