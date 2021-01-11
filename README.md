@@ -2,6 +2,10 @@
 
 Has various features that make it a family recipe book where all the creditials refrence a place in memory to store the recipes of each user as well as use a JWT token to authenticate the user. 
 
+# Build & Deploy
+https://github.com/Build-Week-secretfamilyrecipes-2020/Otherfrontend
+
+
 # Features 
 Will allow you to add recipes depending on the chosen category Title name
 
